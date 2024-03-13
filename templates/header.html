@@ -1,0 +1,28 @@
+ {% load static %}
+ <header id="header" id="home">
+    <div class="container">
+        <div class="row align-items-center justify-content-between d-flex">
+          <div id="logo">
+            <a href="index.html"><img src="{% static 'img/logo.png'%}" alt="" title="" /></a>
+          </div>
+          <nav id="nav-menu-container">
+            <ul class="nav-menu">
+              <li class="menu-active"><a href="/">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="{% url 'home:lists' %}">List of Books</a></li>
+
+              <li><a href="{% url 'add' %}">Add books</a></li>
+              <li><a href="#testomial">Review</a></li>
+              <li class="menu-has-children"><a href="">Pages</a>
+                  <ul>
+                      <li><a href="{% url 'generic' %}">Generics</a></li>
+                     
+                  </ul>  
+              </li>
+          </ul>
+              </li>
+            </ul>
+          </nav><!-- #nav-menu-container -->		    		
+        </div>
+    </div>
+  </header><!-- #header -->

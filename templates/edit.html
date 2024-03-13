@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="generic-banner relative" style="height: 100px;">	
+    <div class="container">
+        <!-- <div class="row height align-items-center justify-content-center">
+            <div class="col-lg-10">
+                <div class="generic-banner-content">
+                   
+               
+                </div>							
+            </div>
+        </div> -->
+    </div>
+</section>
+
+<section class="about-generic-area section-gap">
+    <div class="container border-top-generic">
+      
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <article class="article-recent">
+                <div class="article-recent-main">
+                    
+                    <label for="head1" id="labels" style="color: red;font-size: 20px;font-weight: bold;">Name:</label>
+                    <input type="text" class="article-title" name="head" value="{{ obj.head }}" style="width: 322px;font-size: 16px; color: blue;"><br><br>
+                    <label for="area" id="labels" style="color: red;font-size: 20px;font-weight: bold;">Details:</label><br>
+                    <textarea name="para" rows="6" cols="50" class="article-body" style="font-size: 16px; color: blue;">{{obj.para}}</textarea>
+        
+                    <div class="article-recent-secondary"><br>
+                        {% if obj.coverphoto %}
+                        <!-- <label for="currentimage" id="labels">Current Image:</label> -->
+                        <img id="currentimage" src="{{ obj.coverphoto.url }}" alt="Current Image" width="393px" height="280px">
+                        {% endif %}<br><br>
+                        <label for="files" id="labels" style="color: red;font-size: 20px;font-weight: bold;">Image:</label>
+                        <input type="file" name="image" id="files" style="font-size: 16px; color: blue;">
+                    </div>
+                </div>
+            </article>
+            <input type="submit" value="Update" id="submits" class="btn btn-success" style="margin-left: 150px;margin-top: 30px;">
+        </form>
+        
+    </div>
+</section>
+{% endblock %}
